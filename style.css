@@ -65,7 +65,8 @@ footer {
   font-size: 13px;
   color: #888;
 .logo {
-  max-width: 100px;
-  margin: 0 auto 10px;
+  max-width: 60px;
+  margin: 0 auto 8px;
   display: block;
 }
+
