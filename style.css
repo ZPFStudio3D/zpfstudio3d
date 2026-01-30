@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -5,9 +6,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* BASE */
 body {
   background: #000;
   color: #fff;
+  line-height: 1.6;
 }
 
 /* HEADER */
@@ -15,33 +18,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 40px;
+  padding: 14px 28px;
   background: linear-gradient(to bottom, #000, #111);
   border-bottom: 1px solid #222;
 }
 
-/* BLOC GAUCHE */
+/* LEFT (LOGO ONLY) */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 15px;
-}
-.logo {
-  width: 300px !important;
-  height: auto !important;
 }
 
-/* TITRE */
-.header-left h1 {
-  font-size: 26px;
-  letter-spacing: 2px;
-  white-space: nowrap;
+/* LOGO */
+.logo {
+  width: 120px;   /* <- augmente/réduit ici si besoin */
+  height: auto;
+  display: block;
 }
 
 /* NAV */
 .header-nav {
   display: flex;
-  gap: 22px;
+  align-items: center;
+  gap: 18px;
 }
 
 .header-nav a {
@@ -49,33 +48,42 @@ body {
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 1px;
-  transition: opacity 0.2s;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
 }
 
 .header-nav a:hover {
   opacity: 0.6;
 }
 
-/* CONTENU */
+/* CONTENT */
 .section {
   max-width: 1000px;
-  margin: 60px auto;
+  margin: 55px auto;
   padding: 0 20px;
 }
 
 .section h2 {
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-/* BOUTONS */
+.section h3 {
+  font-size: 22px;
+  margin-top: 28px;
+}
+
+/* BUTTONS */
 .btn {
   display: inline-block;
-  margin-top: 25px;
-  padding: 12px 22px;
+  margin-top: 18px;
+  margin-right: 10px;
+  padding: 12px 20px;
   border: 1px solid #fff;
   color: #fff;
   text-decoration: none;
+  letter-spacing: 1px;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
 
 .btn:hover {
@@ -85,13 +93,33 @@ body {
 
 /* FOOTER */
 footer {
-  margin-top: 80px;
-  padding: 20px;
+  margin-top: 70px;
+  padding: 18px;
   text-align: center;
   font-size: 13px;
   color: #777;
   border-top: 1px solid #222;
 }
 
-/* MOBILE */
-@media (m
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 18px;
+  }
+
+  .logo {
+    width: 110px; /* logo un peu plus petit sur mobile */
+  }
+
+  .header-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+  }
+}
