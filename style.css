@@ -1,3 +1,4 @@
+/* RESET DE BASE */
 * {
   margin: 0;
   padding: 0;
@@ -5,52 +6,88 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* BODY */
 body {
-  background: #0f0f0f;
-  color: #f2f2f2;
+  background-color: #000;
+  color: #fff;
   line-height: 1.6;
 }
 
+/* HEADER */
 header {
-  background: #000;
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: linear-gradient(to bottom, #000, #111);
+  border-bottom: 1px solid #222;
 }
 
+/* LOGO */
+.logo {
+  max-width: 50px;
+}
+
+/* TITRE */
 header h1 {
-  font-size: 32px;
+  font-size: 26px;
   letter-spacing: 2px;
+  margin-left: 20px;
 }
 
+/* NAVIGATION */
 nav {
-  margin-top: 10px;
+  display: flex;
+  gap: 20px;
 }
 
 nav a {
-  color: #ccc;
-  margin: 0 15px;
+  color: #fff;
   text-decoration: none;
   font-size: 14px;
+  letter-spacing: 1px;
+  transition: opacity 0.2s ease;
 }
 
 nav a:hover {
-  color: #fff;
+  opacity: 0.6;
 }
 
+/* SECTIONS */
 .section {
-  padding: 60px 20px;
   max-width: 1000px;
-  margin: auto;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
+/* TITRES */
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.section h3 {
+  font-size: 22px;
+  margin-top: 30px;
+}
+
+/* LISTES */
+.section ul,
+.section ol {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+/* BOUTONS */
 .btn {
   display: inline-block;
-  background: #222;
+  margin-top: 25px;
+  padding: 12px 22px;
+  border: 1px solid #fff;
   color: #fff;
-  padding: 12px 25px;
-  margin-top: 20px;
   text-decoration: none;
-  border: 1px solid #555;
+  letter-spacing: 1px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
@@ -58,15 +95,37 @@ nav a:hover {
   color: #000;
 }
 
+/* FOOTER */
 footer {
-  background: #000;
-  text-align: center;
+  margin-top: 80px;
   padding: 20px;
+  text-align: center;
   font-size: 13px;
-  color: #888;
-.logo {
-  max-width: 60px;
-  margin: 0 auto 8px;
-  display: block;
+  color: #777;
+  border-top: 1px solid #222;
 }
 
+/* RESPONSIVE (MOBILE) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header h1 {
+    margin-left: 0;
+    font-size: 22px;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  .logo {
+    max-width: 45px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+  }
+}
