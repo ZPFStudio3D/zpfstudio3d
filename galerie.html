@@ -34,4 +34,33 @@
     <img src="galerie3.jpg" onclick="openLightbox(this)">
     <img src="galerie4.jpg" onclick="openLightbox(this)">
     <img src="galerie5.jpg" onclick="openLightbox(this)">
-    <
+    <img src="galerie6.jpg" onclick="openLightbox(this)">
+    <img src="galerie7.jpg" onclick="openLightbox(this)">
+    <img src="galerie8.jpg" onclick="openLightbox(this)">
+    <img src="galerie9.jpg" onclick="openLightbox(this)">
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<footer>
+  © ZPF Studio 3D – Tous droits réservés
+</footer>
+
+<script>
+function openLightbox(img) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = img.src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
