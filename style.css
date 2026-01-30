@@ -121,8 +121,9 @@ footer {
     gap: 15px;
   }
 
-  .logo {
-    max-width: 45px;
+ .logo {
+  max-width: 70px;
+}
   }
 
   .section h2 {
