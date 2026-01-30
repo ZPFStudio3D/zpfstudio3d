@@ -31,7 +31,7 @@ body {
 
 /* LOGO */
 .logo {
-  width: 200px;   /* <- augmente/réduit ici si besoin */
+  width: 120px;   /* ajuste ici si besoin (100 / 140 / 160) */
   height: auto;
   display: block;
 }
@@ -83,12 +83,13 @@ body {
   color: #fff;
   text-decoration: none;
   letter-spacing: 1px;
-  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
 .btn:hover {
   background: #fff;
   color: #000;
+  transform: translateY(-1px);
 }
 
 /* FOOTER */
@@ -101,6 +102,61 @@ footer {
   border-top: 1px solid #222;
 }
 
+/* ===== GALERIE ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;       /* ✅ vignettes pas trop grandes */
+  object-fit: cover;   /* ✅ recadrage propre */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* ===== LIGHTBOX (clic pour agrandir) ===== */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+#lightbox img {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 10px;
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  font-size: 42px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.9;
+}
+
+#lightbox .close:hover {
+  opacity: 0.6;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .site-header {
@@ -110,7 +166,7 @@ footer {
   }
 
   .logo {
-    width: 150px; /* logo un peu plus petit sur mobile */
+    width: 110px;
   }
 
   .header-nav {
@@ -122,32 +178,8 @@ footer {
   .section h2 {
     font-size: 26px;
   }
-}
-/* LIGHTBOX */
-#lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
 
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-}
-
-#lightbox .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
+  .gallery img {
+    height: 180px; /* ✅ plus petit sur mobile */
+  }
 }
