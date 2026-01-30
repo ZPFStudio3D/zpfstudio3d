@@ -112,7 +112,7 @@ footer {
 
 .gallery img {
   width: 100%;
-  height: 220px;       /* ✅ vignettes pas trop grandes */
+  height: 120px;       /* ✅ vignettes pas trop grandes */
   object-fit: cover;   /* ✅ recadrage propre */
   border-radius: 10px;
   cursor: pointer;
@@ -180,6 +180,6 @@ footer {
   }
 
   .gallery img {
-    height: 180px; /* ✅ plus petit sur mobile */
+    height: 150px; /* ✅ plus petit sur mobile */
   }
 }
